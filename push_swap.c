@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:33:55 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/17 20:10:50 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:33:52 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	put_in_b(t_list **stack_a, t_list **stack_b)
 	{
 		if ((*stack_a)->index >= start && (*stack_a)->index <= end)
 		{
-			push(stack_b, stack_a, 'b');
+			push(stack_b, stack_a, 'b', 1);
 			start++;
 			end++;
 		}
 		else if ((*stack_a)->index < start)
 		{
-			push(stack_b, stack_a, 'b');
+			push(stack_b, stack_a, 'b', 1);
 			rotate(stack_b, 'b', 1);
 			start++;
 			end++;
@@ -80,7 +80,7 @@ void	sorting_a(t_list **stack_a, t_list **stack_b)
 		head = *stack_b;
 		max = max_index(*stack_b);
 		if (head->index == max)
-			push(stack_a, stack_b, 'a');
+			push(stack_a, stack_b, 'a', 1);
 		else if (position(head, max) > size / 2)
 			reverse_rotate(stack_b, 'b', 1);
 		else if (position(head, max) <= size / 2)

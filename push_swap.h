@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:34:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/17 20:11:56 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:49:46 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void				ft_main(t_list **stack_a, t_list **stack_b);
 
 // rules.c
 void				swap(t_list **stack, char c, int a);
-void				swap_a_b(t_list **stack_a, t_list **stack_b);
-void				push(t_list **stack_1, t_list **stack_2, char c);
+void				swap_a_b(t_list **stack_a, t_list **stack_b, int a);
+void				push(t_list **stack_1, t_list **stack_2, char c, int a);
 void				rotate(t_list **head, char c, int a);
-void				rotate_a_b(t_list **stack_a, t_list **stack_b);
+void				rotate_a_b(t_list **stack_a, t_list **stack_b, int a);
 
 // array.c
 int					*sort_array(t_list *head);
@@ -67,6 +67,8 @@ int					position(t_list *head, int max);
 
 // utils2.c
 void				reverse_rotate(t_list **head, char c, int a);
-void				reverse_rotate_all(t_list **stack_a, t_list **stack_b);
+void				reverse_rotate_all(t_list **stack_a, t_list **stack_b,
+						int a);
+void				ft_write(char *str, char c);
 
 #endif

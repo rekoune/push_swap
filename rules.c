@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:26:47 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/17 14:57:00 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:48:14 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ void	swap(t_list **stack, char c, int a)
 	}
 }
 
-void	swap_a_b(t_list **stack_a, t_list **stack_b)
+void	swap_a_b(t_list **stack_a, t_list **stack_b, int a)
 {
 	swap(stack_a, 'a', 0);
 	swap(stack_b, 'b', 0);
-	write(1, "ss\n", 3);
+	if (a > 0)
+		write(1, "ss\n", 3);
 }
 
-void	push(t_list **stack_1, t_list **stack_2, char c)
+void	push(t_list **stack_1, t_list **stack_2, char c, int a)
 {
 	t_list	*head_1;
 	t_list	*head_2;
@@ -57,9 +58,12 @@ void	push(t_list **stack_1, t_list **stack_2, char c)
 		*stack_1 = head_2;
 		*stack_2 = head_2->next;
 		head_2->next = node_1;
-		write(1, "p", 1);
-		write(1, &c, 1);
-		write(1, "\n", 1);
+		if (a == 1)
+		{
+			write(1, "p", 1);
+			write(1, &c, 1);
+			write(1, "\n", 1);
+		}
 	}
 }
 
@@ -70,22 +74,26 @@ void	rotate(t_list **head, char c, int a)
 
 	node = *head;
 	first_node = *head;
-	*head = node->next;
-	while (first_node->next)
-		first_node = first_node->next;
-	first_node->next = node;
-	node->next = NULL;
-	if (a > 0)
+	if (list_size(*head) > 1)
 	{
-		write(1, "r", 1);
-		write(1, &c, 1);
-		write(1, "\n", 1);
+		*head = node->next;
+		while (first_node->next)
+			first_node = first_node->next;
+		first_node->next = node;
+		node->next = NULL;
+		if (a > 0)
+		{
+			write(1, "r", 1);
+			write(1, &c, 1);
+			write(1, "\n", 1);
+		}
 	}
 }
 
-void	rotate_a_b(t_list **stack_a, t_list **stack_b)
+void	rotate_a_b(t_list **stack_a, t_list **stack_b, int a)
 {
 	rotate(stack_a, 'a', 0);
 	rotate(stack_b, 'b', 0);
-	write(1, "rr\n", 3);
+	if (a > 0)
+		write(1, "rr\n", 3);
 }

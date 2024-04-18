@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:26:32 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/17 13:28:54 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:40:28 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(char *str, t_list **head)
 	i = 0;
 	nb = 0;
 	sign = 1;
+	if ((str[i] == '-' || str[i] == '+') && str[i + 1] == '\0')
+		error(head);
 	if (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
 			sign = -1;

@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:40:50 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/17 16:40:51 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:23:21 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 		else
 			reverse_rotate(stack_a, 'a', 1);
 	}
-	push(stack_b, stack_a, 'b');
+	push(stack_b, stack_a, 'b', 1);
 	while ((*stack_a)->index != 1)
 	{
 		if (position(*stack_a, 0) == 1 || position(*stack_a, 0) == 2)
@@ -44,10 +44,10 @@ void	sort_5(t_list **stack_a, t_list **stack_b)
 		else
 			reverse_rotate(stack_a, 'a', 1);
 	}
-	push(stack_b, stack_a, 'b');
+	push(stack_b, stack_a, 'b', 1);
 	sort_3(stack_a);
-	push(stack_a, stack_b, 'a');
-	push(stack_a, stack_b, 'a');
+	push(stack_a, stack_b, 'a', 1);
+	push(stack_a, stack_b, 'a', 1);
 }
 
 int	order_check(t_list *head)
