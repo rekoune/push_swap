@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:26:47 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 21:48:14 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:38:49 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,14 @@ void	swap_a_b(t_list **stack_a, t_list **stack_b, int a)
 
 void	push(t_list **stack_1, t_list **stack_2, char c, int a)
 {
-	t_list	*head_1;
-	t_list	*head_2;
-	t_list	*node_1;
+	t_list	*tmp;
 
-	head_1 = *stack_1;
-	head_2 = *stack_2;
-	node_1 = *stack_1;
 	if (list_size(*stack_2) > 0)
 	{
-		*stack_1 = head_2;
-		*stack_2 = head_2->next;
-		head_2->next = node_1;
+		tmp = *stack_2;
+		*stack_2 = (*stack_2)->next;
+		tmp->next = *stack_1;
+		*stack_1 = tmp;
 		if (a == 1)
 		{
 			write(1, "p", 1);

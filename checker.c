@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:44:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 21:49:14 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:21:07 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int ac, char **av)
 		if (repetation(stack_a) == 0)
 			error(&stack_a);
 		get_the_line(&stack_a, &stack_b);
-		if ((list_size(stack_b) == 0 && order_check(stack_a) != 0)
+		if ((list_size(stack_b) == 0 && order_check(stack_a) == 0)
 			|| list_size(stack_a) == 1)
 			printf("OK\n");
 		else

@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:40:50 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 19:23:21 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:47:14 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	order_check(t_list *head)
 
 	i = list_size(head);
 	node = head->next;
-	while (i > 1 && (head->index < node->index))
+	while (i > 1 && (head->nbr < node->nbr))
 	{
 		i--;
 		head = head->next;

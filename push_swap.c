@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:33:55 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 18:33:52 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:04:14 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_list	*put_in_a(int ac, char **av)
 			node = new_node(ft_atoi(str[j], &head));
 			free(str[j]);
 			add_back(&head, node);
-			j++;
+			j++; 
 		}
 		free(str);
 		i++;
@@ -118,8 +118,7 @@ int	main(int ac, char **av)
 			error(&stack_a);
 		if (order_check(stack_a) != 0)
 			ft_main(&stack_a, &stack_b);
-		else
-			free_list(&stack_a);
+		free_list(&stack_a);
 	}
 	return (0);
 }
