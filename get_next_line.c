@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 10:33:45 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/19 18:31:30 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:57:50 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ char	*join_reste(char *line, char *reste)
 {
 	char	*str;
 	int		len;
-	int		i;
 
 	if (!reste)
 		return (NULL);
-	i = 0;
 	len = ft_str_len(reste);
 	str = malloc(len + 1);
 	if (!str)

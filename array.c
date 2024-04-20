@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:40:40 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 12:22:48 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:59:55 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,16 @@ void	free_list(t_list **head)
 {
 	t_list	*node;
 
-	node = *head;
+	node = NULL;
+	if (head)
+		node = *head;
 	while (node)
 	{
 		node = (*head)->next;
 		free((*head));
 		*head = node;
 	}
-	*head = NULL;
+	head = NULL;
 }
 
 void	error(t_list **stack_a, t_list **stack_b, char **str, char *a)

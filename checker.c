@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:44:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 12:23:30 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:33:54 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ int	main(int ac, char **av)
 		else
 			printf("KO\n");
 		free_list(&stack_a);
+		free_list(&stack_b);
 	}
 }
