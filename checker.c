@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:44:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 12:33:54 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:21:21 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	get_the_line(t_list **stack_a, t_list **stack_b)
 	while (line)
 	{
 		if (rule_check(line) == 0)
-			error(stack_a, stack_b, NULL, NULL);
+			error(stack_a, stack_b, NULL, line);
 		do_the_rule(stack_a, stack_b, line);
 		free(line);
 		line = get_next_line(0);

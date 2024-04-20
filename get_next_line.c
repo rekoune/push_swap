@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 10:33:45 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 12:57:50 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:22:43 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = join_reste(line, reste);
+	free(line);
+	line = NULL;
 	return (reture);
 }
