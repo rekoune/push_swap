@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:34:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 10:30:43 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:22:57 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int					*sort_array(t_list *head);
 void				give_index(t_list *head, int *array);
 void				array_swap(int *array, int i);
 void				free_list(t_list **head);
-void				error(t_list **stack, char **str, char *a, int b);
+void				error(t_list **stack, t_list **stack_b, char **str, char *a);
 
 // sort_less.c
 void				sort_5(t_list **stack_a, t_list **stack_b);

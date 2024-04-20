@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:33:55 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 10:31:30 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:23:37 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int	main(int ac, char **av)
 		give_index(stack_a, array);
 		free(array);
 		if (repetation(stack_a) == 0)
-			error(&stack_a, NULL, NULL, 0);
+			error(&stack_a, &stack_b, NULL, NULL);
 		if (order_check(stack_a) != 0)
 			ft_main(&stack_a, &stack_b);
 		free_list(&stack_a);

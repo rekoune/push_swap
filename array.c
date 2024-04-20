@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:40:40 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 10:26:09 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:22:48 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,15 @@ void	free_list(t_list **head)
 	*head = NULL;
 }
 
-void	error(t_list **stack, char **str, char *a, int b)
+void	error(t_list **stack_a, t_list **stack_b, char **str, char *a)
 {
-	if (b == 1)
+	if (a || str)
 	{
-			free(a);
-			free(str);
+		free(a);
+		free(str);
 	}
 	write(2, "Error\n", 6);
-	free_list(stack);
+	free_list(stack_a);
+	free_list(stack_b);
 	exit(1);
 }

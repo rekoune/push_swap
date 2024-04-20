@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 21:44:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/20 10:35:17 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:23:30 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ void	get_the_line(t_list **stack_a, t_list **stack_b)
 	while (line)
 	{
 		if (rule_check(line) == 0)
-			error(stack_a, NULL, NULL, 0);
+			error(stack_a, stack_b, NULL, NULL);
 		do_the_rule(stack_a, stack_b, line);
+		free(line);
 		line = get_next_line(0);
 	}
 }
@@ -74,12 +75,13 @@ int	main(int ac, char **av)
 	{
 		stack_a = put_in_a_bonus(ac, av);
 		if (repetation(stack_a) == 0)
-			error(&stack_a, NULL, NULL, 0);
+			error(&stack_a, &stack_b, NULL, NULL);
 		get_the_line(&stack_a, &stack_b);
 		if ((list_size(stack_b) == 0 && order_check(stack_a) == 0)
 			|| list_size(stack_a) == 1)
 			printf("OK\n");
 		else
 			printf("KO\n");
+		free_list(&stack_a);
 	}
 }
