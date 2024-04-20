@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:41:05 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 21:47:32 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:20:15 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_list	*put_in_a_bonus(int ac, char **av)
 		j = 0;
 		while (str[j])
 		{
-			node = new_node(ft_atoi(str[j], &head));
+			node = new_node(ft_atoi(str[j], &head, str));
 			free(str[j]);
 			add_back(&head, node);
 			j++;

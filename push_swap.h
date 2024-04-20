@@ -6,7 +6,7 @@
 /*   By: arekoune <arekoune@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 01:34:38 by arekoune          #+#    #+#             */
-/*   Updated: 2024/04/18 21:49:46 by arekoune         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:30:43 by arekoune         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 
 // switch_to_integer.c
 char				**ft_split(char *str, char c, t_list **head);
-int					ft_atoi(char *str, t_list **head);
+int					ft_atoi(char *str, t_list **head, char **a);
 int					str_len(char *str, char c);
 int					counte(char *str, char c);
 char				*sub_str(char *str, int len);
@@ -56,7 +56,7 @@ int					*sort_array(t_list *head);
 void				give_index(t_list *head, int *array);
 void				array_swap(int *array, int i);
 void				free_list(t_list **head);
-void				error(t_list **stack);
+void				error(t_list **stack, char **str, char *a, int b);
 
 // sort_less.c
 void				sort_5(t_list **stack_a, t_list **stack_b);
