@@ -41,4 +41,9 @@ re: fclean all
 
 reb: fcbonus bonus
 
+
+ARG="2 5 3 4 1" 
+test :
+	 valgrind --leak-check=full --show-leak-kinds=all  ./checker $(ARG)
+ 
 .PHONY : all bonus clean fclean fcbonus re reb

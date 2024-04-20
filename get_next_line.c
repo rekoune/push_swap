@@ -111,7 +111,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = join_reste(line, reste);
-	free(line);
-	line = NULL;
+	// free(line);
+	// line = NULL;
 	return (reture);
 }
